@@ -70,6 +70,12 @@ function ContactForm() {
                         <p className="error-text">{errorMessage}</p>
                     </div>
                 )}
+
+                {/*its same as this in JSX-  if(errorMessage) {
+                        <div>
+                       <p className="error-text">{errorMessage}</p>
+                     </div>
+                } */}
                 <button data-testid="button" type="submit">Submit</button>
             </form>
         </section>

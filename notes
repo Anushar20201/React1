@@ -22,3 +22,15 @@ Due to keywords reserved in JavaScript, we need to replace the for attribute in 
 
 Notice that we named the function ContactForm, not Contact. The name of this function isn't critical and doesn't have to match the name of the component folder. But the name of the function needs to be in the export statement
 ======
+
+onBlur instead of onChange
+
+The error message displays as soon as the first letter is typed inside the email field. But this isn't actually an error—the user just hasn't finished typing. We want the validation check to occur after the user has finished typing, not before. Thankfully we can use the onBlur attribute instead of onChange. The onBlur attribute will fire the event once the user has changed focus from the input field, thus allowing the user to finish their entry before validating their input.
+
+Let's change the three attributes in the form elements to onBlur and check the results in the user interface. We can see that the error message no longer appears on every keystroke for the email input field but instead evaluates the format once the focus has changed from the input.
+
+=====
+
+Notice the <> and </> that wrap the Gallery and About components. Can you imagine what these are and what they might be for? They are called React fragments—a shorthand abbreviation for <React.Fragment></React.Fragment>.
+====
+
