@@ -35,12 +35,10 @@ function Nav(props) {
           </li>
           {categories.map((category) => (
             <li
-                         // this line of code means that currentCategory.name === category.name will get evaluated, and as long as it is true, 
+              // this line of code means that currentCategory.name === category.name will get evaluated, and as long as it is true, 
               //then the second bit of the short circuit, navActive, will be returned.
-  
-              className={`mx-1 ${
-                currentCategory.name === category.name
-                }`}
+
+              className={`mx-1 ${currentCategory.name === category.name}`}
               key={category.name}
             >
               <span

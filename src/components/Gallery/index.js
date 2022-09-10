@@ -6,7 +6,7 @@ function Gallery(props) {
   const { currentCategory } = props;
   return (
     <section>
-            {/* capitalizeFirstLetter() helper function to capitalize the name value when it's rendered */}
+      {/* capitalizeFirstLetter() helper function to capitalize the name value when it's rendered */}
 
       <h1 data-testid="h1tag">{capitalizeFirstLetter(currentCategory.name)}</h1>
       <p>{currentCategory.description}</p>

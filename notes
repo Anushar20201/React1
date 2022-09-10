@@ -17,3 +17,8 @@ We must use a Hook to trigger a re-render on a variable value change. In this st
 In the present case, we'd like the component to re-render when the value updates. Similar to the useState Hook, to implement useEffect, we must first import the Hook from react.
 =====
 
+Due to keywords reserved in JavaScript, we need to replace the for attribute in the <label> element to htmlFor, just as class had to be changed to className previously.
+======
+
+Notice that we named the function ContactForm, not Contact. The name of this function isn't critical and doesn't have to match the name of the component folder. But the name of the function needs to be in the export statement
+======
