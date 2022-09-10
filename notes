@@ -1,0 +1,19 @@
+components are functions, we can pass in any type of argument we want. Rather than passing it in through parentheses, though, you need to pass them in as attributes on the component in JSX. This is JSX, so you can name those attributes whatever you want, without the need for the data- prefix. Then within the Child component, props is nothing more than the name of the parameter, which you could change to be whatever you want.
+
+This feature is incredibly powerful, but we still have one problem. Gallery is not a child of Nav, so we can't pass props from Nav to the Gallery. We could create a state in Gallery, but then it wouldn’t know about the navigation changing. Instead, we’re going to “lift” the state up one level. Whenever you think state needs to be used in multiple sibling components, it's normally a good idea to lift the state up until it can be passed as props to any child components that need it.
+
+Lift state to App.js and pass the currentCategory and its setter through to Nav. While we're at it, let's move categories up to the App level as well. 
+
+====
+
+We have cleaned up the Nav component quite a bit by "lifting" the state to the parent component, App.js.
+
+We just received a last second request. Lyza wants to update the tab on the browser to reflect the user's category selection. This will improve the user experience by providing the user with feedback from the website.
+
+To update the document.title, which will change the tab's text content, we'll use the currentCategory value that will reflect the user's category selection. If we simply reassign document.title = currentCategory, we'll change the value of document.title. But will this cause a re-render of the component? Judging by what we experienced earlier in this lesson—no, it won't.
+
+We must use a Hook to trigger a re-render on a variable value change. In this step, we will introduce a new Hook called useEffect. The main difference between useEffect and useState is that useEffect is an API that reflects the lifecycle methods of the component, such as when the component mounts, unmounts, or updates. To learn more about useEffect, visit the React Hooks API reference documentation (Links to an external site.).
+
+In the present case, we'd like the component to re-render when the value updates. Similar to the useState Hook, to implement useEffect, we must first import the Hook from react.
+=====
+
